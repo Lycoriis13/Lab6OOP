@@ -1,0 +1,7 @@
+﻿@model WebApplication2.Models.User
+
+<h2>Докладна інформація про користувача</h2>
+<p>Ім'я: @Model.FirstName</p>
+<p>Прізвище: @Model.LastName</p>
+<p>Email: @Model.Email</p>
+<p>Дата реєстрації: @Model.RegistrationDate.ToShortDateString()</p> <!-- Форматирование даты для удобства -->

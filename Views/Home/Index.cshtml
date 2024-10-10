@@ -1,0 +1,32 @@
+﻿@model IEnumerable<WebApplication2.Models.User>
+
+<h3>Список користувачів</h3>
+
+@if (Model.Any()) // Проверяем, есть ли данные в модели
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Ім'я</th>
+                <th>Прізвище</th>
+                <th>Email</th>
+                <th>Дата реєстрації</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.FirstName</td>
+                    <td>@user.LastName</td>
+                    <td>@user.Email</td>
+                    <td>@user.RegistrationDate.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Немає даних для відображення.</p>
+}
